@@ -7,10 +7,11 @@ import './App.css';
 import './styles/index.scss';
 
 const App = (): ReactElement => {
+  const [search, setSearch] = React.useState('');
   return (
     <div className="App">
-      <Header />
-      <HomePage />
+      <Header search={search} setSearch={setSearch} />
+      <HomePage search={search} />
     </div>
   );
 };

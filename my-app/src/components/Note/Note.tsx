@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { ReactElement } from 'react';
@@ -22,10 +23,12 @@ const Note = ({ id, title, deleteNote, editNode }: Props): ReactElement => {
     }
   };
 
+  const highlighted = title.replace(/(#\w+)/g, '<span class="hashtag">$1</span>');
+
   return (
     <div className={styles.note}>
       <p className={styles.title}>Note</p>
-      <p>{title}</p>
+      <div dangerouslySetInnerHTML={{ __html: highlighted }} />
       <div className={styles.menu}>
         <img src={editImage} alt="edit" onClick={changeTitle} />
         <img

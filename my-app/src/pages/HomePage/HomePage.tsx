@@ -12,7 +12,11 @@ type dataNote = {
   title: string;
 };
 
-const HomePage = (): ReactElement => {
+type Props = {
+  search: string;
+};
+
+const HomePage = ({ search }: Props): ReactElement => {
   const [data, setData] = React.useState<dataNote[]>([]);
   React.useEffect(() => {
     if (localStorage.getItem('notedata') !== null) {
@@ -71,9 +75,11 @@ const HomePage = (): ReactElement => {
             </form>
           </div>
           <div className={styles.mainContainer}>
-            {data.map((elem) => (
-              <Note id={elem.id} title={elem.title} deleteNote={deleteNote} editNode={editNode} />
-            ))}
+            {data
+              .filter((element) => element.title.includes(search))
+              .map((elem) => (
+                <Note id={elem.id} title={elem.title} deleteNote={deleteNote} editNode={editNode} />
+              ))}
           </div>
         </div>
       </div>
