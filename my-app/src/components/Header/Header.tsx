@@ -7,9 +7,9 @@ const Header = (): ReactElement => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.container}>
-          <p>Note text editor</p>
+          <p className={styles.logo}>Note text editor</p>
           <input type="text" />
-          <p>Test project</p>
+          <p className={styles.title}>Test project</p>
         </div>
       </div>
     </header>

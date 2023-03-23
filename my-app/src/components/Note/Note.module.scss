@@ -1,0 +1,34 @@
+@import url('../../variables/Variables.module.scss');
+
+.note {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  width: 270px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--color-purple);
+}
+
+.title {
+  font-family: 'Montserrat-Bold';
+  font-size: 20px;
+}
+
+.menu {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 30px;
+
+  img {
+    height: 100%;
+    cursor: pointer;
+  }
+  img:hover {
+    filter: invert(32%) sepia(27%) saturate(2775%) hue-rotate(355deg) brightness(97%) contrast(109%);
+  }
+}
