@@ -20,6 +20,13 @@
   border-radius: 10px;
   padding: 20px;
 
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
   input {
     outline: none;
     font-family: 'Montserrat-Regular';
@@ -35,7 +42,7 @@
     font-size: 20px;
   }
 
-  button {
+  input[type='submit'] {
     display: flex;
     justify-content: center;
     outline: none;
@@ -46,10 +53,11 @@
     background: var(--color-purple);
     border: 1px solid var(--color-darkpurple);
     padding: 5px 20px;
+    cursor: pointer;
     transition: 1s;
   }
 
-  button:hover {
+  input[type='submit']:hover {
     filter: brightness(120%);
   }
 }
