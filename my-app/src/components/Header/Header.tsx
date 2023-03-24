@@ -13,13 +13,17 @@ const Header = ({ search, setSearch }: Props): ReactElement => {
       <div className="container">
         <div className={styles.container}>
           <p className={styles.logo}>Note text editor</p>
-          <input
-            type="text"
-            value={search}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-              setSearch(e.target.value);
-            }}
-          />
+          <div className={styles.search}>
+            <p>#</p>
+            <input
+              type="text"
+              value={search}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+                setSearch(e.target.value);
+              }}
+            />
+          </div>
+
           <p className={styles.title}>Test project</p>
         </div>
       </div>

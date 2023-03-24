@@ -15,17 +15,6 @@
   text-transform: uppercase;
   font-size: 18px;
 
-  input {
-    width: 30%;
-    outline: none;
-    font-family: 'Montserrat-Bold';
-    color: var(--color-darkpurple);
-    font-size: 16px;
-    border: 1px solid var(--color-darkpurple);
-    border-radius: 10px;
-    padding: 5px 15px;
-  }
-
   .logo {
     width: 200px;
     text-align: start;
@@ -34,5 +23,28 @@
   .title {
     width: 200px;
     text-align: end;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 30%;
+
+  p {
+    font-family: 'Montserrat-Bold';
+    color: var(--color-darkpurple);
+    font-size: 18px;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    font-family: 'Montserrat-Bold';
+    color: var(--color-darkpurple);
+    font-size: 16px;
+    border: 1px solid var(--color-darkpurple);
+    border-radius: 10px;
+    padding: 5px 15px;
   }
 }

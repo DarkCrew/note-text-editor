@@ -2,15 +2,11 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { ChangeEvent, ReactElement } from 'react';
+import { dataNote } from 'core/api/models';
 
 import Note from '../../components/Note/Note';
 
 import styles from './HomePage.module.scss';
-
-type dataNote = {
-  id: number;
-  title: string;
-};
 
 type Props = {
   search: string;
@@ -76,7 +72,12 @@ const HomePage = ({ search }: Props): ReactElement => {
           </div>
           <div className={styles.mainContainer}>
             {data
-              .filter((element) => element.title.includes(search))
+              .filter((element) => {
+                if (search.length !== 0) {
+                  return element.title.includes(`#${search}`);
+                }
+                return true;
+              })
               .map((elem) => (
                 <Note id={elem.id} title={elem.title} deleteNote={deleteNote} editNode={editNode} />
               ))}
