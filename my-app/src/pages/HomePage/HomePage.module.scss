@@ -68,3 +68,20 @@
   gap: 30px;
   padding: 40px 0;
 }
+
+@media (max-width: 1024px) {
+  .mainContainer {
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    gap: 40px;
+  }
+
+  .taskContainer {
+    width: 100%;
+  }
+}
